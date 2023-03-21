@@ -63,3 +63,23 @@ More information about the EKS module [here](https://registry.terraform.io/modul
 ## Addon: EBS ##
 
 More information on [Assuming Role with OIDC](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest/submodules/iam-assumable-role-with-oidc "module iam") and EKS [addon](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_addon "eks addon")
+
+**create_role**:	By default, this is set to false. To use this module, the value for this input must be set to true. 
+
+**role_name**:	The name of the role to create. For tracking and manageability, the EKS cluster name was concatenated. 
+
+**provider_url**:	The URL of the OIDC Provider. 
+
+**role_policy_arns**:	The ARN of IAM policy. The value set to this input is = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy" 
+
+**oidc_fully_qualified_subjects**:	The fully qualified OIDC subjects to be added to the role policy. 
+
+**cluster_name**:	The name of the EKS Cluster. 
+
+**addon_name**:	The name of the EKS addon to select 
+
+**addon_version**:	The version of the EKS addon 
+
+**service_account_role_arn**:	The ARN of the recently created IAM role to bind to the addon's service account. 
+
+**tags**:	Map of tags to attach to the addon.
