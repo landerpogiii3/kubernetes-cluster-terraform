@@ -59,3 +59,7 @@ More information about the EKS module [here](https://registry.terraform.io/modul
 **max_size**:   The maximum count of instances in a node. Set to 3 
 
 **desired_size**:   The desired count of instances in a node. Set to 2 
+
+## Addon: EBS ##
+
+More information on [Assuming Role with OIDC](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest/submodules/iam-assumable-role-with-oidc "module iam") and EKS [addon](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_addon "eks addon")
