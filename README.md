@@ -31,4 +31,7 @@ More information of the VPC module [here](https://registry.terraform.io/modules/
 
 *Note*:   The default value for the last three inputs is set to false which is why they are explicitly set to true 
 
-**[public | private ]_subnet_tags**:    Map of tags to be attached to specified subnets 
+**[public | private ]_subnet_tags**:    Map of tags to be attached to specified subnets
+
+## EKS ##
+More information about the EKS module [here](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest "eks")
