@@ -83,3 +83,32 @@ More information on [Assuming Role with OIDC](https://registry.terraform.io/modu
 **service_account_role_arn**:	The ARN of the recently created IAM role to bind to the addon's service account. 
 
 **tags**:	Map of tags to attach to the addon.
+
+When applied, this will create the Kubernetes cluster managed by AWS EKS. To see the leader of the node, install kubectl on the same workstation you applied the terraform code. 
+
+You can do this by executing the following: 
+
+Download the latest release: 
+
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" 
+
+Validate the binary 
+
+    curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+    echo "$(cat kubectl.sha256)  kubectl" | sha256sum –check 
+
+ The output should be: 
+
+    kubectl: OK 
+
+Install kubectl 
+
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl 
+
+Once the terraform code is done, you need to configure kubectl to interact with it. 
+
+First, open the outputs.tf file to review the output values. You will use the region and cluster_name outputs to configure kubectl. 
+
+Run the following command to retrieve the access credentials for your cluster and configure kubectl. 
+
+    aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name
