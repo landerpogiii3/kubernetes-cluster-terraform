@@ -35,3 +35,27 @@ More information of the VPC module [here](https://registry.terraform.io/modules/
 
 ## EKS ##
 More information about the EKS module [here](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest "eks")
+
+**cluster_name**:   The name of the EKS cluster. The value I have set for this is = to "dimacali-EKS-cluster" 
+
+**cluster_version**:    The EKS cluster version to use. 
+
+**vpc_id**: The ID of the VPC that was previously created. 
+
+**subnet_ids**: A list of the IDs of the subnets in the same VPC 
+
+**cluster_endpoint_public_access**: Whether or not the Amazon EKS public API server endpoint is enabled 
+
+**eks_managed_node_group_defaults**:    Adds the value for ami_type to the filter block that selects the AMI to use. 
+
+**eks_managed_node_groups**:    Map of EKS managed node group definitions to create 
+
+**name**:   The name to give to the node. I have set this to “dimacali-node-group-1” 
+
+**instance_types**: Sets the instance type to use. I used t3.small. 
+
+**min_size**:   The minimum count of instances in a node. Set to 1 
+
+**max_size**:   The maximum count of instances in a node. Set to 3 
+
+**desired_size**:   The desired count of instances in a node. Set to 2 
