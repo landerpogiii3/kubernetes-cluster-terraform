@@ -112,3 +112,11 @@ First, open the outputs.tf file to review the output values. You will use the re
 Run the following command to retrieve the access credentials for your cluster and configure kubectl. 
 
     aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name
+
+Verify the Cluster 
+
+Use kubectl commands to verify your cluster configuration. 
+
+First, get information about the cluster by executing the command: 
+
+    kubectl cluster-info
